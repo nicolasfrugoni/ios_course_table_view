@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let nibCell = UINib.init(nibName: String(describing: CustomTableViewCell.self), bundle: nil)
+        tableView.register(nibCell, forCellReuseIdentifier: "mycell")
     }
 }
 
