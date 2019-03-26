@@ -10,18 +10,22 @@ import Foundation
 
 class SitesModel {
     
-    let sites = [Site(id: "MLA", name: "Argentina"),
-                 Site(id: "MLB", name: "Brasil"),
-                 Site(id: "MLV", name: "Venezuela (Deprecado)"),
-                 Site(id: "MLM", name: "Mexico")]
+    var sites: [Site] = []
     
     func getAllSites() -> [Site] {
+        guard let jsonData = SitesMock.sitesJson.data(using: .utf8) else { return sites }
+        
+        do {
+            sites = try JSONDecoder().decode([Site].self, from: jsonData)
+        } catch {
+            print("It failed")
+        }
         return sites
     }
     
 }
 
-struct Site {
+struct Site: Codable {
     let id: String
     let name: String
 }

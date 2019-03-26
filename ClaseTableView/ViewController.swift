@@ -43,9 +43,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.textLabel?.text = "\(siteList[indexPath.row].name)"
-        }
+
+        let detailVC = DetailViewController(site: siteList[indexPath.row])
+        self.present(detailVC, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
