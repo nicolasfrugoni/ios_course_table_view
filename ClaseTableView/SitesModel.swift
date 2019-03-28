@@ -8,21 +8,27 @@
 
 import Foundation
 
-class SitesModel {
+class SitesModel: SitesModelProtocol {
     
-    var sites: [Site] = []
+    weak var delegate: SiteViewControllerProtocol?
+    var service: SitesService!
     
-    func getAllSites() -> [Site] {
-        guard let jsonData = SitesMock.sitesJson.data(using: .utf8) else { return sites }
-        
-        do {
-            sites = try JSONDecoder().decode([Site].self, from: jsonData)
-        } catch {
-            print("It failed")
-        }
-        return sites
+    init(delegate: SiteViewControllerProtocol) {
+        self.delegate = delegate
+        setupService()
     }
     
+    func setupService() {
+        service = SitesService(delegate: self)
+    }
+    
+    func getAllSites() {
+        service.getSites()
+    }
+    
+    func successFetchingSites(sites: [Site]) {
+        delegate?.reloadTableView(sites: sites)
+    }
 }
 
 struct Site: Codable {

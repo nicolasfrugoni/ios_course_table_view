@@ -8,15 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-  
-    let siteList = SitesModel().getAllSites()
+class ViewController: UIViewController, SiteViewControllerProtocol {
+    
+    var siteList = [Site]()
+    var siteModel: SitesModel?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Mi App"
+        siteModel = SitesModel(delegate: self)
         setupTableView()
     }
     
@@ -26,6 +28,8 @@ class ViewController: UIViewController {
             navigationItem.largeTitleDisplayMode = .always
             navigationController?.navigationBar.prefersLargeTitles = true
         }
+        
+        siteModel?.getAllSites()
     }
 
     func setupTableView() {
@@ -34,6 +38,11 @@ class ViewController: UIViewController {
         
         let nibCell = UINib.init(nibName: String(describing: CustomTableViewCell.self), bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: "mycell")
+    }
+    
+    func reloadTableView(sites: [Site]) {
+        siteList = sites
+        tableView.reloadData()
     }
 }
 

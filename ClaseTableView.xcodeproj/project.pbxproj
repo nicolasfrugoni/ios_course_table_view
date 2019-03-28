@@ -12,7 +12,9 @@
 		9CBD07252244186400DE2F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CBD07242244186400DE2F22 /* Assets.xcassets */; };
 		9CBD07282244186400DE2F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBD07262244186400DE2F22 /* LaunchScreen.storyboard */; };
 		9CBD0730224422BE00DE2F22 /* SitesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBD072F224422BE00DE2F22 /* SitesModel.swift */; };
-		D0671B5C224AB0B100C38306 /* SitesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0671B5B224AB0B100C38306 /* SitesMock.swift */; };
+		BBBBF56D224C41B500E1B0A8 /* SitesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF56C224C41B500E1B0A8 /* SitesService.swift */; };
+		BBBBF56F224C470A00E1B0A8 /* SitesModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF56E224C470A00E1B0A8 /* SitesModelProtocol.swift */; };
+		BBBBF571224C498800E1B0A8 /* SiteViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBF570224C498800E1B0A8 /* SiteViewControllerProtocol.swift */; };
 		D0671B5F224AB3E400C38306 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0671B5D224AB3E400C38306 /* DetailViewController.swift */; };
 		D0671B60224AB3E400C38306 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0671B5E224AB3E400C38306 /* DetailViewController.xib */; };
 		D0671B62224ABB2500C38306 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0671B61224ABB2500C38306 /* ViewController.xib */; };
@@ -28,7 +30,9 @@
 		9CBD07272244186400DE2F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CBD07292244186400DE2F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CBD072F224422BE00DE2F22 /* SitesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesModel.swift; sourceTree = "<group>"; };
-		D0671B5B224AB0B100C38306 /* SitesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesMock.swift; sourceTree = "<group>"; };
+		BBBBF56C224C41B500E1B0A8 /* SitesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesService.swift; sourceTree = "<group>"; };
+		BBBBF56E224C470A00E1B0A8 /* SitesModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesModelProtocol.swift; sourceTree = "<group>"; };
+		BBBBF570224C498800E1B0A8 /* SiteViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewControllerProtocol.swift; sourceTree = "<group>"; };
 		D0671B5D224AB3E400C38306 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0671B5E224AB3E400C38306 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D0671B61224ABB2500C38306 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -72,14 +76,24 @@
 				9CBD07262244186400DE2F22 /* LaunchScreen.storyboard */,
 				9CBD07292244186400DE2F22 /* Info.plist */,
 				9CBD072F224422BE00DE2F22 /* SitesModel.swift */,
-				D0671B5B224AB0B100C38306 /* SitesMock.swift */,
 				D0671B5D224AB3E400C38306 /* DetailViewController.swift */,
 				D0671B5E224AB3E400C38306 /* DetailViewController.xib */,
 				D0671B61224ABB2500C38306 /* ViewController.xib */,
 				D0671B63224ABD6500C38306 /* CustomTableViewCell.swift */,
 				D0671B64224ABD6500C38306 /* CustomTableViewCell.xib */,
+				BBBBF56C224C41B500E1B0A8 /* SitesService.swift */,
+				BBBBF573224C49BC00E1B0A8 /* Protocols */,
 			);
 			path = ClaseTableView;
+			sourceTree = "<group>";
+		};
+		BBBBF573224C49BC00E1B0A8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BBBBF56E224C470A00E1B0A8 /* SitesModelProtocol.swift */,
+				BBBBF570224C498800E1B0A8 /* SiteViewControllerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBBBF56F224C470A00E1B0A8 /* SitesModelProtocol.swift in Sources */,
 				D0671B65224ABD6500C38306 /* CustomTableViewCell.swift in Sources */,
-				D0671B5C224AB0B100C38306 /* SitesMock.swift in Sources */,
+				BBBBF571224C498800E1B0A8 /* SiteViewControllerProtocol.swift in Sources */,
+				BBBBF56D224C41B500E1B0A8 /* SitesService.swift in Sources */,
 				9CBD07202244186200DE2F22 /* ViewController.swift in Sources */,
 				D0671B5F224AB3E400C38306 /* DetailViewController.swift in Sources */,
 				9CBD071E2244186200DE2F22 /* AppDelegate.swift in Sources */,
